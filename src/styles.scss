@@ -1,1 +1,118 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('assets/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    width: 100vw;
+    height: 100px;
+    border-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+        background-image: url('assets/logo.jpeg');
+        height: 80px;
+        width: 250px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-y: center;
+        margin: 10px 20px;
+        align-self: flex-start;
+
+        @media screen and (max-width: 497px) {
+            width: 200px;
+            margin-left: 4px;
+            margin-top: 7px;
+        }
+    }
+
+    .btns {
+        height: 80px;
+        margin: 18px 10px;
+        align-self: flex-end;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        button {
+            -o-border-radius: 9px;
+            -webkit-border-radius: 9px;
+            -moz-border-radius: 9px;
+            -ms-border-radius: 9px;
+            border-radius: 9px;
+            width: 100px;
+            height: 30px;
+            background-color: #415D65;
+            color: white;
+            text-align: center;
+
+            @media screen and (max-width: 480px) {
+                width: 60px;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+.outer-container {
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    height: 400px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    margin: 10px;
+    -o-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.form {
+    text-align: center;
+    font-size: large;
+}
+
+.btn button {
+    width: 210px;
+    -o-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+    margin-top: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

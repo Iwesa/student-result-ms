@@ -1,0 +1,24 @@
+<div class="outer-container">
+  <form [formGroup]="form" (submit)="submit()">
+    <div class="form">
+      <p>Log in</p>
+      <div class="input-field">
+        <input
+          type="text"
+          name="regNo"
+          formControlName="regNo"
+          placeholder="reg no"
+        />
+      </div>
+      <div class="input-field">
+        <input
+          type="password"
+          name="password"
+          formControlName="password"
+          placeholder="password"
+        />
+      </div>
+      <div class="btn"><button type="submit">Log in</button></div>
+    </div>
+  </form>
+</div>

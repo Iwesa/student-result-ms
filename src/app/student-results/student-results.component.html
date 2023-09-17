@@ -1,0 +1,32 @@
+<div class="main" id="print-table">
+  <p>Reg No: {{ student.regNo }}</p>
+  <p>Name: {{ student.firstName }} {{ student.lastName }}</p>
+  <p>Email: {{ student.email }}</p>
+
+  <div class="transparent-bg">
+    <table>
+      <tr>
+        <th>Unit Code</th>
+        <th>Name</th>
+        <th>CAT 1</th>
+        <th>CAT 2</th>
+        <th>Exam</th>
+        <th>Total</th>
+      </tr>
+      <tr *ngFor="let unit of student.units">
+        <td>{{ unit.code | uppercase }}</td>
+        <td>{{ unit.name }}</td>
+        <td>{{ unit.cat1 }}</td>
+        <td>{{ unit.cat2 }}</td>
+        <td>{{ unit.exam }}</td>
+        <td>{{ unit.cat1 + unit.cat2 + unit.exam }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="print-btn">
+  <button type="button" printSectionId="print-table" ngxPrint>
+    Download PDF
+  </button>
+</div>

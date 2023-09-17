@@ -1,0 +1,65 @@
+<div class="student-details">
+  <p>Add student details</p>
+  <div class="input-field">
+    <input type="text" id="regNo" [(ngModel)]="regNo" />
+    <label for="regNo">Reg No</label>
+  </div>
+  <div class="input-field">
+    <input type="text" id="firstName" [(ngModel)]="firstName" />
+    <label for="firstName">First Name</label>
+  </div>
+  <div class="input-field">
+    <input type="text" id="lastName" [(ngModel)]="lastName" />
+    <label for="lastName">Last Name</label>
+  </div>
+  <div class="input-field">
+    <input type="text" id="email" [(ngModel)]="email" />
+    <label for="email">Email</label>
+  </div>
+  <div class="btn">
+    <button type="submit" (click)="submit()">Submit</button>
+  </div>
+</div>
+
+<div class="student-list">
+  <table>
+    <tr>
+      <th>Reg No</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+    <tr *ngFor="let student of studentsList">
+      <td>
+        <a routerLink="/student/{{ student.id }}">{{
+          student.regNo | uppercase
+        }}</a>
+      </td>
+      <td>
+        <input
+          type="text"
+          [(ngModel)]="student.firstName"
+          placeholder="firstName"
+        />
+      </td>
+      <td>
+        <input
+          type="text"
+          [(ngModel)]="student.lastName"
+          placeholder="lastName"
+        />
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="student.email" placeholder="email" />
+      </td>
+      <td>
+        <button type="button" (click)="update(student)">Update</button>
+      </td>
+      <td>
+        <button type="button" (click)="deleteStudent(student)">Del</button>
+      </td>
+    </tr>
+  </table>
+</div>
