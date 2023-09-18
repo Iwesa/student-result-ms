@@ -1,20 +1,36 @@
 <div class="student-details">
-  <p>Add student details</p>
+  <h1>Add student details</h1>
   <div class="input-field">
-    <input type="text" id="regNo" [(ngModel)]="regNo" />
-    <label for="regNo">Reg No</label>
+    <input
+      type="text"
+      id="regNo"
+      [(ngModel)]="regNo"
+      placeholder="registration no."
+    />
   </div>
   <div class="input-field">
-    <input type="text" id="firstName" [(ngModel)]="firstName" />
-    <label for="firstName">First Name</label>
+    <input
+      type="text"
+      id="firstName"
+      [(ngModel)]="firstName"
+      placeholder="first name"
+    />
   </div>
   <div class="input-field">
-    <input type="text" id="lastName" [(ngModel)]="lastName" />
-    <label for="lastName">Last Name</label>
+    <input
+      type="text"
+      id="lastName"
+      [(ngModel)]="lastName"
+      placeholder="last name"
+    />
   </div>
   <div class="input-field">
-    <input type="text" id="email" [(ngModel)]="email" />
-    <label for="email">Email</label>
+    <input
+      type="text"
+      id="email"
+      [(ngModel)]="email"
+      placeholder="student email"
+    />
   </div>
   <div class="btn">
     <button type="submit" (click)="submit()">Submit</button>
