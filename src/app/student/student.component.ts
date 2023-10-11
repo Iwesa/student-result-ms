@@ -12,6 +12,7 @@ export class StudentComponent {
   student!: any;
 
   //Fields for unit
+  id!: number;
   code!: string;
   name!: string;
   cat1!: number;
@@ -26,6 +27,7 @@ export class StudentComponent {
 
   createUnits() {
     const unit: Unit = {
+      id: this.id,
       code: this.code,
       name: this.name,
       cat1: this.cat1,
@@ -50,7 +52,7 @@ export class StudentComponent {
   }
 
   delete(unit: Unit) {
-    this.unitService.delete(unit.code).subscribe(data => {
+    this.unitService.delete(unit.id).subscribe(data => {
       if (data) {
         this.refresh()
       }

@@ -1,28 +1,42 @@
 <div class="outer-container">
-  <form [formGroup]="form" (submit)="submit()">
-    <div class="form">
-      <p>Register</p>
-      <div class="input-field">
-        <input
-          type="text"
-          name="regNo"
-          formControlName="regNo"
-          placeholder="reg no"
-          required="true"
-        />
-      </div>
-      <div class="input-field">
-        <input
-          type="password"
-          name="password"
-          formControlName="password"
-          placeholder="password"
-          required="true"
-        />
-      </div>
-      <div class="btn">
-        <button type="submit">Submit</button>
+  <form [formGroup]="form" (submit)="submit()" class="transparent-bg">
+    <h2>Student registration</h2>
+    <div class="input-field">
+      <input
+        class="input"
+        type="text"
+        name="regNo"
+        formControlName="regNo"
+        placeholder="reg no"
+        required="true"
+      />
+      <div
+        *ngIf="regNo.invalid && (regNo.dirty || regNo.touched)"
+        class="alert"
+      >
+        <div *ngIf="regNo.errors?.['required']">
+          Registration number is required.
+        </div>
       </div>
     </div>
+    <div class="input-field">
+      <input
+        class="input"
+        type="password"
+        name="password"
+        formControlName="password"
+        placeholder="password"
+        required="true"
+      />
+      <div *ngIf="pwd.invalid && (pwd.dirty || pwd.touched)" class="alert">
+        <div *ngIf="pwd.errors?.['required']">
+          Registration number is required.
+        </div>
+        <div *ngIf="pwd.errors?.['minLength']">
+          Password is at least eight characters
+        </div>
+      </div>
+    </div>
+    <button class="btn" type="submit" [disabled]="form.invalid">Submit</button>
   </form>
 </div>

@@ -1,7 +1,10 @@
 <header>
   <div class="logo"></div>
-  <div class="btns">
+  <div class="btns" *ngIf="!isAuthenticated">
     <button routerLink="/register">Register</button>
     <button routerLink="/login">Log in</button>
+  </div>
+  <div class="btns" *ngIf="isAuthenticated">
+    <button (click)="logout()">Log out</button>
   </div>
 </header>

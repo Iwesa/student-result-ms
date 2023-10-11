@@ -1,76 +1,77 @@
-<div class="units-details student-details">
+<div class="student-details transparent-bg">
   <div class="input-fields">
-    <input type="text" [(ngModel)]="code" placeholder="e.g. ICS2100" />
+    <input
+      class="input"
+      type="text"
+      [(ngModel)]="code"
+      placeholder="e.g. ICS2100"
+    />
   </div>
   <div class="input-fields">
-    <input type="text" [(ngModel)]="name" placeholder="e.g. Programing" />
+    <input
+      class="input"
+      type="text"
+      [(ngModel)]="name"
+      placeholder="e.g. Programing"
+    />
   </div>
   <div class="input-fields">
-    <input type="number" [(ngModel)]="cat1" placeholder="cat1" />
+    <input class="input" type="number" [(ngModel)]="cat1" placeholder="cat1" />
   </div>
   <div class="input-fields">
-    <input type="number" [(ngModel)]="cat2" placeholder="cat2" />
+    <input class="input" type="number" [(ngModel)]="cat2" placeholder="cat2" />
   </div>
   <div class="input-fields">
-    <input type="number" [(ngModel)]="exam" placeholder="exam" />
+    <input class="input" type="number" [(ngModel)]="exam" placeholder="exam" />
   </div>
 
   <button class="btn" type="submit" (click)="createUnits()">Submit</button>
 </div>
-<div class="margin-left">
-  <div class="student" *ngIf="student">
-    <p>Reg No: {{ student.regNo | uppercase }}</p>
-    <p>Name: {{ student.firstName }} {{ student.lastName }}</p>
-    <p>Email: {{ student.email }}</p>
-  </div>
+<div class="margin-left" *ngIf="student">
+  <p>Reg No: {{ student.regNo | uppercase }}</p>
+  <p>Name: {{ student.firstName }} {{ student.lastName }}</p>
+  <p>Email: {{ student.email }}</p>
+</div>
 
-  <div class="unit-scores" *ngIf="student">
-    <table>
-      <tr>
-        <th>Unit Code</th>
-        <th>Unit Name</th>
-        <th>CAT 1</th>
-        <th>CAT 2</th>
-        <th>Exam</th>
-        <th>Total</th>
-        <th>Update</th>
-        <th>Delete</th>
-      </tr>
-      <tr *ngFor="let unit of student.units">
-        <td>
-          {{ unit.code | uppercase }}
-        </td>
-        <td>
-          {{ unit.name }}
-        </td>
-        <td>
-          <input
-            type="number"
-            id="cat1"
-            [(ngModel)]="unit.cat1"
-            placeholder="cat 1"
-          />
-        </td>
-        <td>
-          <input
-            type="number"
-            id="cat2"
-            [(ngModel)]="unit.cat2"
-            placeholder="cat 2"
-          />
-        </td>
-        <td>
-          <input
-            type="number"
-            id="exam"
-            [(ngModel)]="unit.exam"
-            placeholder="exam"
-          />
-        </td>
-        <td>{{ unit.cat1 + unit.cat2 + unit.exam }}</td>
-        <td><button type="button" (click)="update(unit)">Update</button></td>
-        <td><button type="button" (click)="delete(unit)">Del</button></td>
-      </tr>
-    </table>
-  </div>
+<div class="student-list" *ngIf="student">
+  <table>
+    <tr>
+      <th>Unit Code</th>
+      <th>Unit Name</th>
+      <th>CAT 1</th>
+      <th>CAT 2</th>
+      <th>Exam</th>
+      <th>Total</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+    <tr *ngFor="let unit of student.units">
+      <td>
+        {{ unit.code | uppercase }}
+      </td>
+      <td>
+        {{ unit.name }}
+      </td>
+      <td>
+        <input type="number" [(ngModel)]="unit.cat1" placeholder="cat 1" />
+      </td>
+      <td>
+        <input type="number" [(ngModel)]="unit.cat2" placeholder="cat 2" />
+      </td>
+      <td>
+        <input type="number" [(ngModel)]="unit.exam" placeholder="exam" />
+      </td>
+      <td>{{ unit.cat1 + unit.cat2 + unit.exam }}</td>
+      <td>
+        <button class="update-del" type="button" (click)="update(unit)">
+          Update
+        </button>
+      </td>
+      <td>
+        <button class="update-del" type="button" (click)="delete(unit)">
+          Del
+        </button>
+      </td>
+    </tr>
+  </table>
 </div>

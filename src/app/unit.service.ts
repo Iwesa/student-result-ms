@@ -26,7 +26,7 @@ export class UnitService {
     return this.http.post(`${BaseUrl}/units/${unit.code}/update`, unit)
   }
 
-  delete(code: string) {
-    return this.http.delete(`${BaseUrl}/units/${code}/delete`)
+  delete(id: number) {
+    return this.http.delete(`${BaseUrl}/units/${id}/delete`)
   }
 }

@@ -1,7 +1,8 @@
-<div class="student-details">
+<div class="student-details transparent-bg">
   <h1>Add student details</h1>
   <div class="input-field">
     <input
+      class="input"
       type="text"
       id="regNo"
       [(ngModel)]="regNo"
@@ -10,6 +11,7 @@
   </div>
   <div class="input-field">
     <input
+      class="input"
       type="text"
       id="firstName"
       [(ngModel)]="firstName"
@@ -18,6 +20,7 @@
   </div>
   <div class="input-field">
     <input
+      class="input"
       type="text"
       id="lastName"
       [(ngModel)]="lastName"
@@ -26,15 +29,14 @@
   </div>
   <div class="input-field">
     <input
+      class="input"
       type="text"
       id="email"
       [(ngModel)]="email"
       placeholder="student email"
     />
   </div>
-  <div class="btn">
-    <button type="submit" (click)="submit()">Submit</button>
-  </div>
+  <button class="btn" type="submit" (click)="submit()">Submit</button>
 </div>
 
 <div class="student-list">
@@ -68,13 +70,26 @@
         />
       </td>
       <td>
-        <input type="text" [(ngModel)]="student.email" placeholder="email" />
+        <input
+          [autocomplete]="false"
+          type="email"
+          [(ngModel)]="student.email"
+          placeholder="email"
+        />
       </td>
       <td>
-        <button type="button" (click)="update(student)">Update</button>
+        <button class="update-del" type="button" (click)="update(student)">
+          Update
+        </button>
       </td>
       <td>
-        <button type="button" (click)="deleteStudent(student)">Del</button>
+        <button
+          class="update-del"
+          type="button"
+          (click)="deleteStudent(student)"
+        >
+          Del
+        </button>
       </td>
     </tr>
   </table>
